@@ -1,0 +1,234 @@
+<style>
+  /* ROMANTIC MULTI-GENRE CAROUSEL - 2nd Anniversary */
+  .romantic-carousel-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px 25px;
+    background: linear-gradient(180deg, #fff0f5, #ffe4e8);
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.25);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .romantic-carousel-container h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    color: #ff1493;
+    margin: 0 0 12px 0;
+    text-shadow: 0 4px 10px rgba(255, 20, 147, 0.3);
+    letter-spacing: 1px;
+  }
+
+  .romantic-carousel-container .subtitle {
+    text-align: center;
+    font-size: 1.35rem;
+    color: #db7093;
+    font-style: italic;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+
+  .carousel {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: inset 0 0 30px rgba(255, 182, 193, 0.4);
+  }
+
+  .carousel-track {
+    display: flex;
+    width: 200%;
+    animation: scrollLeftToRight 40s linear infinite;
+  }
+
+  .carousel-track img {
+    flex: 0 0 340px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-right: 18px;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .carousel-track img:hover {
+    transform: scale(1.05);
+  }
+
+  @keyframes scrollLeftToRight {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+  .carousel:hover .carousel-track {
+    animation-play-state: paused;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .romantic-carousel-container h2 { font-size: 2rem; }
+    .carousel-track img { flex: 0 0 260px; height: 180px; margin-right: 12px; }
+  }
+
+  @media (max-width: 480px) {
+    .carousel-track img { flex: 0 0 210px; height: 155px; }
+  }
+
+  /* Floating hearts */
+  .romantic-carousel-container::before,
+  .romantic-carousel-container::after {
+    content: "💖 💕 💗";
+    position: absolute;
+    top: 25px;
+    font-size: 2rem;
+    opacity: 0.15;
+    pointer-events: none;
+    animation: floatHearts 12s ease-in-out infinite;
+  }
+  .romantic-carousel-container::before { left: 35px; }
+  .romantic-carousel-container::after { right: 35px; animation-duration: 15s; animation-direction: reverse; }
+
+  @keyframes floatHearts {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+  }
+</style>
+
+<!-- ==================== GENRE 1 ==================== -->
+<div class="romantic-carousel-container">
+  <h2>💕 Our Sweet Moments 💕</h2>
+  <div class="subtitle">Every smile and hug that makes my heart melt</div>
+  <div class="carousel">
+    <div id="track-sweet" class="carousel-track"></div>
+  </div>
+  <p style="text-align: center; margin-top: 20px; color: #db7093; font-size: 1.1rem;">❤️ Refresh for new random memories ❤️</p>
+</div>
+
+<!-- ==================== GENRE 2 ==================== -->
+<div class="romantic-carousel-container">
+  <h2>🌹 Our Date Nights 🌹</h2>
+  <div class="subtitle">Romantic dinners and cozy evenings together</div>
+  <div class="carousel">
+    <div id="track-dates" class="carousel-track"></div>
+  </div>
+  <p style="text-align: center; margin-top: 20px; color: #db7093; font-size: 1.1rem;">❤️ Refresh for new random memories ❤️</p>
+</div>
+
+<!-- ==================== GENRE 3 ==================== -->
+<div class="romantic-carousel-container">
+  <h2>✈️ Our Adventures ✈️</h2>
+  <div class="subtitle">Exploring the world hand in hand</div>
+  <div class="carousel">
+    <div id="track-travel" class="carousel-track"></div>
+  </div>
+  <p style="text-align: center; margin-top: 20px; color: #db7093; font-size: 1.1rem;">❤️ Refresh for new random memories ❤️</p>
+</div>
+
+<!-- Add more genres below by copying one of the blocks above and changing the title, subtitle, and image list ID -->
+
+<script>
+  // ==================== YOUR IMAGE LISTS ====================
+  // Replace these with your real thumbnail links[](https://drive.google.com/thumbnail?id=FILE_ID&sz=w1200)
+
+  const sweetImages = [
+    "https://drive.google.com/thumbnail?id=12iylQd-T5ZsZFK1zRsrZCIRblWjMI7gy&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1F7GufACkNBCLj8OO1yJZz9xhS3KucGzW&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1F8MHhBKgH8-UvoNXT34tjp4387Fz3hPk&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1F48LwPuKhvFPJerSBpwctv8f9z3bF4tR&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1F3PPY64AhDFWYNiR2Y8dQrIeXxs7IxEB&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1EXtO5eWzyMOiwd-SZut6lzWFO15KpZgQ&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1EaZo1caj5df5Xpj_NQ2-0wXOMQF4pMAx&sz=w1200",
+    // Add all your "Sweet Moments" images here (~200 if you want)
+  ];
+
+  const dateImages = [
+    "https://drive.google.com/thumbnail?id=11Segc_Zg93cGa5nJhYq2W7JKdgIdLPc-&sz=w1200",
+      "https://drive.google.com/thumbnail?id=11V0uxf3o6f6BqcOGLV_e2QbD4OAJS8UP&sz=w1200",
+      "https://drive.google.com/thumbnail?id=11OIJmjFO93dk4zbCp---FnzJP7gjFGCt&sz=w1200",
+      "https://drive.google.com/thumbnail?id=11BHHwZ_PjURkdco_ncQJu3UdSKClGcJy&sz=w1200",
+      "https://drive.google.com/thumbnail?id=11BoTmKoYk6NvB00oUE76sMIwJwnXVUDT&sz=w1200",
+      "https://drive.google.com/thumbnail?id=118TUnUUCFBv5COydXmmL7SoXFo9ZOi7m&sz=w1200",
+      "https://drive.google.com/thumbnail?id=10oeyiLrIfLcRGb0cIREyg6HyXB8PDYUU&sz=w1200",
+      "https://drive.google.com/thumbnail?id=112mwcsvDDawzpa1mIuylHDdkwaIiVBpz&sz=w1200",
+      "https://drive.google.com/thumbnail?id=10u0dpAKRVETsSDOQI9dwLaukLw6wNfmU&sz=w1200",
+      "https://drive.google.com/thumbnail?id=10hZI2alRDb6A85EeQoZbj3Y0Qy4L4LQB&sz=w1200",
+      "https://drive.google.com/thumbnail?id=10hOBaVfI47bAuSzms5qZZVNtz5oa5jij&sz=w1200",
+      "https://drive.google.com/thumbnail?id=10_bjJA3eJsel9UbzxlW2ZesqCgVVTBvP&sz=w1200",
+      "https://drive.google.com/thumbnail?id=14Mxe93wRhzizyx35lzhBuMBRAMNB_80p&sz=w1200",
+      "https://drive.google.com/thumbnail?id=10jrAFEOEE1yKk9ZHoAWizz1nTV6A_M02&sz=w1200",
+      "https://drive.google.com/thumbnail?id=10iIyNIP8O4NUiHuzhjPR9HUZmVqgFg48&sz=w1200"
+  ];
+
+  const travelImages = [
+    "https://drive.google.com/thumbnail?id=13RFntpBHFMcKuSelCgAtCX1i0OysdulE&sz=w1200",
+      "https://drive.google.com/thumbnail?id=13U0Wn_M9mJGBl5eTTQtWZGA9VUzBTV33&sz=w1200",
+      "https://drive.google.com/thumbnail?id=13R5PTUaMsxiMdeA_p5eR3xXuv34XW-_W&sz=w1200",
+      "https://drive.google.com/thumbnail?id=13Kf_COMv3Kgtbg4xyIOp9TbxMUvVcqHj&sz=w1200",
+      "https://drive.google.com/thumbnail?id=13KlYGdPjVfSwjCVzHQlUrMImpZxe2UUX&sz=w1200",
+      "https://drive.google.com/thumbnail?id=13JmgC4EUno7dUXul_z8l4QZ-MxiHibTj&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12zl_FA_R8OYS8yBwrcYmBomPZUNMgIuY&sz=w1200",
+      "https://drive.google.com/thumbnail?id=135iMaiqwSpDq474YU1eMOJjnbu64VuVp&sz=w1200",
+      "https://drive.google.com/thumbnail?id=137NETostuiee3g8OaEa0Y_dfkEVWduOV&sz=w1200",
+      "https://drive.google.com/thumbnail?id=133WP6vdmOYFeglakrDhu2B9BHFp52pqZ&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12zirWyp0_bONRmx1OQSNapGt0eh4mr7b&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12j54vAPKvKWBskGgEe6BSCYXFonVowPi&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12zZ8p4EUKUPBRqCZG1kI_opNjeNzxsrp&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12evzydFyd-yP2_VvFEPqlUaeVeppBdqN&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12dwuaKS_cg39VWNUafWWbNfgxBkqZ7Nm&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12dt7zAjwA0Y1nA6UhaSaHfFvQTJOReKM&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12cOUv5LmdHn27u4flYya2khkaLl5Z9Zi&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12_Vuc8oLS4gUZd3Y3r6FfjGEMUXgMG6l&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12_Ct3261q0x9XWrdugeez2UW66iXUrRk&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12YrhUzFIi7nayjLLS8p3VKEJ-GDyT7We&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12KjAvfM5qMK7iwnbENE7QLbub4p2L5HU&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12EM_-kfB_AxLi_io-D_nteug1YwqlS1P&sz=w1200",
+      "https://drive.google.com/thumbnail?id=12BjqoB4A_MD8GzbtvOdnh5jXUqtcX94_&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1246knROg690HVL4m-P-5mp3pzUcqEYtC&sz=w1200",
+      "https://drive.google.com/thumbnail?id=125kyygoLudaGXhvsfiMXHL70AVtz7nSb&sz=w1200",
+      "https://drive.google.com/thumbnail?id=125PBO1w5oW2BC5jj3-xQN9sxrUUUDOfQ&sz=w1200",
+      "https://drive.google.com/thumbnail?id=122NUz2iDkhJZfUUTuK6S7hoUT02ZCsJ-&sz=w1200",
+      "https://drive.google.com/thumbnail?id=120CHVD2wAQByTWgCzXioQ2012i1duyrp&sz=w1200",
+      "https://drive.google.com/thumbnail?id=11wAIlZqPFij0F3oUdtJXl0Vak81gXQBz&sz=w1200",
+      "https://drive.google.com/thumbnail?id=11ysklg_U22xz_aATX7G1_0UEzCN6ST02&sz=w1200"
+  ];
+
+  // ==================== HELPER FUNCTION ====================
+  function getRandom20(list) {
+    if (list.length <= 20) return [...list];
+    let shuffled = [...list].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 20);
+  }
+
+  function buildCarousel(trackId, imageList) {
+    const selected = getRandom20(imageList);
+    const track = document.getElementById(trackId);
+    if (!track) return;
+    track.innerHTML = '';
+
+    // First set
+    selected.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = "Our Love Memory";
+      track.appendChild(img);
+    });
+
+    // Duplicate set for smooth infinite loop
+    selected.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = "Our Love Memory";
+      track.appendChild(img);
+    });
+  }
+
+  // Build all carousels when page loads
+  window.onload = function() {
+    buildCarousel('track-sweet', sweetImages);
+    buildCarousel('track-dates', dateImages);
+    buildCarousel('track-travel', travelImages);
+    // Add more lines here if you add more genres
+  };
+</script>
